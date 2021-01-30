@@ -1,10 +1,109 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive E-Learning System</title>
-</head>
-<body>
-    <h2>Home Page</h2>
-</body>
-</html>
+{% extends "base_page.html" %}
+{%block title%} Home {%endblock%}
+
+{%block username%} {{username}} {%endblock%}
+
+{%block name%} {{name}} {%endblock%}
+
+{%block head%}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+
+
+{%endblock head%}
+
+
+
+{%block content %}
+
+
+
+<div class="container-fluid">
+    <div class="row row-cols-4" style="text-align: center;border: 1px solid;padding: 2px;">
+        <div class="col">
+            <a href="#">
+                <div class="col" id="pre-k" style="border: 1px solid black;padding: 2px;" onclick="changeColor(1)">
+                    <button class="btn btn-outline-info">Pre-K</button> <br/>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                    </div>
+                </div>  
+            </a>
+        </div>
+        <div class="col">
+            <a href="#">
+                <div class="col" id="grade-k"  style="border: 1px solid black; padding: 2px;" onclick="changeColor(2)">
+                    <button class="btn btn-outline-info">Grade-K</button> <br/>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                    </div>
+                </div>  
+            </a>
+        </div>
+        <div class="col">
+            <a href="#">
+                <div class="col" id="grade-1" style="border: 1px solid black;padding: 2px;" onclick="changeColor(3)">
+                    <button class="btn btn-outline-info">Grade-1</button> <br/>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                    </div>
+                </div>  
+            </a>
+        </div>
+        <div class="col">
+            <a href="#">
+                <div class="col" id="grade-2" style="border: 1px solid black;padding: 2px;" onclick="changeColor(4)">
+                    <button class="btn btn-outline-info">Grade-2</button> <br/>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                    </div>
+                </div>  
+            </a>
+
+        </div>
+    </div>
+</div>
+
+
+<div id="sidebar">
+    <div class="toggle-btn" onclick="toggleSidebar(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>  
+    <div class="list">
+      <div class="item">Home</div>
+      <div class="item">About us</div>
+      <div class="item">Contact us</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{%endblock content%}
+
+{%block scripts%}
+
+<script type="text/javascript">
+    function toggleSidebar(ref){
+        document.getElementById("sidebar").classList.toggle('active');
+    }
+</script>
+
+<script type="text/javascript" src="{{url_for('static',filename='js/index.js')}}">
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
+
+{%endblock scripts%}
