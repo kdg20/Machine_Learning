@@ -46,7 +46,7 @@ def login():
       user_password = request.form.get("inputPassword")
       #get the user object which have Email equal to user input email
       #and password
-      user = user_data.find_one({},{'Email' : user_email,'userName':1,'Password':1})
+      user = user_data.find_one({'Email' : user_email})
       email = user.get('Email')
       user_name = user.get('userName')
       #check users mail id and password 
@@ -66,6 +66,9 @@ def login():
 #when user visit the site this comes first
 @app.route('/home')
 def home():
+      #check  if user already logged in or not
+      #if logged in then pass the username and name of user to the home template
+      #else render the home template without user with sign in sign up options
       if 'username' in session:
          user_details = user_data.find_one({'userName':session['username']})
          username = user_details.get('userName')
@@ -74,8 +77,9 @@ def home():
       return render_template('home.html')
 
 
-@app.route('/index/<username>')
-def index(username):
+@app.route('/index')
+def index():
+   username = session['username']
    user_details = user_data.find_one({'userName':username})
    user_name = user_details.get('userName')
    email_id = user_details.get('Email')
@@ -95,7 +99,11 @@ def register():
       fname = request.form.get("fname")
       mname = request.form.get("mname")
       lname = request.form.get("lname")
+      class_name = request.form.get("class_name")
+      if class_name is None:
+         class_name = "pre_k"
       checkbox = request.form.get("checkbox")
+      name = fname+" "+mname +" "+lname
 
       #generate a password hash to securely store the password in database
       p_hash = generate_password_hash(password)
@@ -115,7 +123,8 @@ def register():
                      'Password':p_hash,
                      'City':city,
                      'birthDate':dob,
-                     'fullName': fname + mname + lname
+                     'fullName': name,
+                     'class': class_name
                   }
                )
             else:
@@ -123,7 +132,8 @@ def register():
             if checkbox == "on":
                #if sign in is checked
                #then redirect to the index page
-               return render_template('index.html',username=user_name)
+               session['username']=user_name
+               return render_template('index.html',username=user_name,name=name)
             else:
                #if the sign in not checked 
                #then redirect to the login page and show success message
