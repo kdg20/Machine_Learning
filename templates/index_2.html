@@ -21,62 +21,14 @@
 {%block content %}
 
 
-
-<div class="container-fluid">
-    <div class="row row-cols-4" style="text-align: center;border: 1px solid;padding: 2px;">
-        <div class="col">
-            <a href="#" id="class_link">
-                <div class="col" id="pre-k" style="border: 1px solid black;padding: 2px;" onclick="changeColor(1)">
-                    <button class="btn btn-outline-info">Pre-K</button> <br/>
-                    <div class="progress">
-                        <div id="pbar_pre_k" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
-                    </div>
-                </div>  
-            </a>
-        </div>
-        <div class="col">
-            <a href="#">
-                <div class="col" id="grade-k"  style="border: 1px solid black; padding: 2px;" onclick="changeColor(2)">
-                    <button class="btn btn-outline-info">Grade-K</button> <br/>
-                    <div class="progress">
-                        <div id="pbar_k" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
-                    </div>
-                </div>  
-            </a>
-        </div>
-        <div class="col">
-            <a href="#">
-                <div class="col" id="grade-1" style="border: 1px solid black;padding: 2px;" onclick="changeColor(3)">
-                    <button class="btn btn-outline-info">Grade-1</button> <br/>
-                    <div class="progress">
-                        <div id="pbar_1" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
-                    </div>
-                </div>  
-            </a>
-        </div>
-        <div class="col">
-            <a href="#">
-                <div class="col" id="grade-2" style="border: 1px solid black;padding: 2px;" onclick="changeColor(4)">
-                    <button class="btn btn-outline-info">Grade-2</button> <br/>
-                    <div class="progress">
-                        <div id="pbar_2" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
-                    </div>
-                </div>  
-            </a>
-
-        </div>
-    </div>
-</div>
-
-
 <div class="primary-nav">
-    <button href="#" class="hamburger open-panel nav-toggle">
+    <button href="#" class="hamburger open-panel nav-toggle" onclick="">
     <span class="screen-reader-text">Menu</span>
     </button>
     
         <nav role="navigation" class="menu">
     
-            <a href="#" class="logotype">LOGO<span>TYPE</span></a>
+            <a href="#" class="logotype"><span>AUTODIDACT</span></a>
     
             <div class="overflow-container">
     
@@ -88,8 +40,8 @@
                         <a href="#">Settings</a><span class="icon"><i class="fa fa-gear"></i></span>
     
                         <label title="toggle menu" for="settings">
-            <span class="downarrow"><i class="fa fa-caret-down"></i></span>
-          </label>
+                            <span class="downarrow"><i class="fa fa-caret-down"></i></span>
+                        </label>
                         <input type="checkbox" class="sub-menu-checkbox" id="settings" />
     
                         <ul class="sub-menu-dropdown">
@@ -99,9 +51,9 @@
                         </ul>
                     </li>
     
-                    <li><a href="#">Favourites</a><span class="icon"><i class="fa fa-heart"></i></span></li>
+                    <li><a href="#">About</a><span class="icon"><i class="fa fa-heart"></i></span></li>
     
-                    <li><a href="#">Messages</a><span class="icon"><i class="fa fa-envelope"></i></span></li>
+                    <li><a href="#">Contact</a><span class="icon"><i class="fa fa-envelope"></i></span></li>
     
                 </ul>
     
@@ -113,29 +65,104 @@
     
     <div class="new-wrapper">
     
-        <div id="main">
-    
-            <div id="main-contents">
-    
-                <h1>Multi-level Side Navigation</h1>
-    
-                <p class="intro"><strong>This is a multi-level side navigation pattern with hover and push</strong>. Hovering over the menu will reveal its lables and clicking the hamburger icon pins the menu open.</p>
-    
-                <h2>Checkbox Hack</h2>
-    
-                <p>I started by using the checkbox hack but ran into its limitations when I tried to implement the 'push' behaviour. It works for the secondary menus but the input element and its corresponding label can really only affect the adjacent element (i.e. I
-                    couldn't target the page container to push it over). So, I added...</p>
-    
-                <h2>A Touch of jQuery</h2>
-                <p>I'm sure this could be done with vanilla javascript, but that is not my strong suit. So here we are. You might be thinking, "Why not just use JQuery for all of the functionality?" Well, you can! Fork it and go nuts! Maybe drop me a line if you do.</p>
-    
-                <p class="small"><strong>This is small text</strong>. Lorem Ipsum is simply dummy text from the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled
-                    it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularized in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-    
+        <div class="container">
+            
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Course</h5>
+                  <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
             </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card">
+                <img src="https://dummyimage.com/600x400/000/fff.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Course</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, magni officiis ullam dolore ad commodi quis veritatis ducimus molestiae in tempora laborum, odit, laudantium culpa dicta fuga quaerat cupiditate facere.</p>
+                </div>
+              </div>
+            </div>
+          </div>
     
+            
         </div>
+        
     
     </div>
 
@@ -153,10 +180,13 @@
 </script>
 
 
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $('.nav-toggle').click(function() {
+    e.preventDefault();
+    $("html").toggleClass("openNav");
+    $(".nav-toggle").toggleClass("active");
+    });
+ </script>
 
 
 {%endblock scripts%}

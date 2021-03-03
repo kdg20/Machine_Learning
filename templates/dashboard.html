@@ -1,0 +1,165 @@
+{% extends "base_page.html" %}
+{%block title%} Home {%endblock%}
+
+{%block username%} {{username}} {%endblock%}
+
+{%block name%} {{name}} {%endblock%}
+
+{%block head%}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/dashboardCss.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='css/classCss.css')}}">
+
+
+
+{%endblock head%}
+
+
+
+{%block content %}
+
+
+<div class="container-fluid">
+        <div class="row row-cols-4" style="text-align: center;border: 1px solid;padding: 2px;">
+            <div class="col">
+                <a href="#" id="class_link">
+                    {% if s_class == "pre_k": %}
+                    <div class="col" id="pre-k" style="border: 3px solid black;padding: 2px;" onclick="changeColor(1)">  
+                        <button class="btn btn-outline-info" onclick="changeColor(1)">Pre-K</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_pre_k" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {% else: %}
+                    <div class="col" id="pre-k" style="border: 1px solid black;padding: 2px;" onclick="changeColor(1)">  
+                        <button class="btn btn-outline-info" onclick="changeColor(1)">Pre-K</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_pre_k" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </a>
+            </div>
+            <div class="col">
+                <a href="#">
+                    {% if s_class == "grade_k": %}
+                    <div class="col" id="grade-k"  style="border: 3px solid black; padding: 2px;" onclick="changeColor(2)">
+                        <button class="btn btn-outline-info">Grade-K</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_k" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {% else: %}
+                    <div class="col" id="grade-k"  style="border: 1px solid black; padding: 2px;" onclick="changeColor(2)">
+                        <button class="btn btn-outline-info">Grade-K</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_k" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+
+                    {% endif %}  
+                </a>
+            </div>
+            <div class="col">
+                <a href="#">
+                    {% if s_class == "grade_1"%}
+                    <div class="col" id="grade-1" style="border: 3px solid black;padding: 2px;" onclick="changeColor(3)">
+                        <button class="btn btn-outline-info">Grade-1</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_1" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {% else: %}
+                    <div class="col" id="grade-1" style="border: 1px solid black;padding: 2px;" onclick="changeColor(3)">
+                        <button class="btn btn-outline-info">Grade-1</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_1" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {% endif %}  
+                </a>
+            </div>
+            <div class="col">
+                <a href="#">
+                    {% if s_class == "grade_2"%}
+                    <div class="col" id="grade-2" style="border: 3px solid black;padding: 2px;" onclick="changeColor(4)">
+                        <button class="btn btn-outline-info">Grade-2</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_2" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {%else: %}
+                    <div class="col" id="grade-2" style="border: 1px solid black;padding: 2px;" onclick="changeColor(4)">
+                        <button class="btn btn-outline-info">Grade-2</button> <br/>
+                        <div class="progress">
+                            <div id="pbar_2" class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    {% endif %}  
+                </a>
+
+            </div>
+        </div>
+</div>
+
+
+<div class="container">
+
+    <div class="col-container" style="margin-top: 80px;" align="center">
+        <div class="row row_cards" style="height: 150px; margin: 20px;">
+            <a href="#" class="rounded col_cards" style="color: black; width: 49%; margin: 5px; background-image: url(../static/images/start_learning.gif);background-size: contain;background-repeat: no-repeat;">
+                <div class="col rounded">
+                    <h3 style="margin-top:35px;">Start Learning</h2>
+                </div>
+            </a>
+            <a href="#" class="rounded col_cards" style="color: black; width: 49%; margin: 5px; background-image: url(../static/images/quizes.jpg);background-size: contain;background-repeat: no-repeat;">
+                <div class="col rounded">
+                    <h3 style="margin-top:35px;">Quizes</h2>
+                </div>
+            </a>
+            
+        </div>
+        <div class="row row_cards" style="height: 150px; margin: 20px;" align="center">
+            <a href="#" class="rounded col_cards" style="color: black; width: 49%; margin: 5px; background-image: url(../static/images/games.jpg);background-size: contain;background-repeat: no-repeat;">
+                <div class="col">
+                    <h3 style="margin-top:35px;">Games</h2>
+                </div>
+            </a>
+
+            <a href="#" class="rounded col_cards" style="color: black; width: 49%;  margin: 5px; background-image: url(../static/images/drawing_2.jpg);background-size: contain;background-repeat: no-repeat;">
+                <div class="col">
+                    <h3 style="margin-top:35px;">Drawing</h2>
+                </div>
+            </a>
+                        
+        </div>
+
+    </div>
+    
+
+</div>
+
+
+
+
+{%endblock content%}
+
+{%block scripts%}
+
+
+<script type="text/javascript" src="{{url_for('static',filename='js/navJs.js')}}">
+</script>
+<script type="text/javascript" src="{{url_for('static',filename='js/index.js')}}">
+</script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+
+
+{%endblock scripts%}

@@ -30,9 +30,16 @@ def hello_world():
    return render_template('home.html')
 
 #this is success page route
-@app.route('/success')
-def success():
-   return "Logged in !"
+@app.route('/dashboard')
+def dashboard():
+   username = session['username']
+   user_details = user_data.find_one({'userName':username})
+   user_name = user_details.get('userName')
+   email_id = user_details.get('Email')
+   city = user_details.get('City')
+   name = user_details.get('fullName')
+   session["grade"] = user_details.get('class')
+   return render_template("dashboard.html",username=user_name,email_id=email_id,name=name,s_class=session["grade"])
 
 
 
@@ -49,13 +56,15 @@ def login():
       user = user_data.find_one({'Email' : user_email})
       email = user.get('Email')
       user_name = user.get('userName')
+      full_name = user.get('fullName')
       #check users mail id and password 
       #if correct then redirect to the dashboard
       #else redirect to the loging page with error message
       if email == user_email and check_password_hash(user.get('Password'),user_password):
          #return render_template('index.html',username=user_name,user=user)
          session['username']=user_name
-         return redirect(url_for('index',username=user_name))
+         session['name']=full_name
+         return redirect(url_for('dashboard',username=user_name))
       else:
          #Invalid login credentials
          #redirect again to the login page and show error message
@@ -133,6 +142,7 @@ def register():
                #if sign in is checked
                #then redirect to the index page
                session['username']=user_name
+               session['name']=name
                return render_template('index.html',username=user_name,name=name)
             else:
                #if the sign in not checked 
@@ -160,6 +170,22 @@ def profile():
 @app.route('/updateProfile')
 def updateProfile():
    return render_template('profile.html')
+
+@app.route('/index_2')
+def index_2():
+   return render_template('index_2.html')
+
+@app.route('/cards')
+def cards():
+   return render_template('cards.html')
+
+@app.route('/courses')
+def courses():
+   return render_template('courses.html',username=session['username'],name=session['name'])
+
+@app.route('/demo_quize')
+def demo_quize():
+   return render_template('demo_quize.html',username=session['username'],name=session['name'])
 
 @app.route('/logout')
 def logout():
