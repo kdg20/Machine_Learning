@@ -187,6 +187,14 @@ def courses():
 def demo_quize():
    return render_template('demo_quize.html',username=session['username'],name=session['name'])
 
+@app.route('/quiz1')
+def quiz1():
+   return render_template('pre_k_english_quize_1.html',username=session['username'],name=session['name'])
+
+@app.route('/quiz2')
+def quiz2():
+   return render_template('pre_k_english_quiz_2.html',username=session['username'],name=session['name'])  
+
 @app.route('/logout')
 def logout():
    session.pop('username',None)
